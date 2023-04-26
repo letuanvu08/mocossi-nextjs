@@ -1,0 +1,19 @@
+html,
+html body {
+  font-family: -apple-system, BlinkMacSystemFont, Muli, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #141414;
+  margin: 0;
+  padding: 0;
+}
+
+.scrollable--hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable--hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+

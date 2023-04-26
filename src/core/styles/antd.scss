@@ -1,0 +1,38 @@
+// @import "antd/dist/antd.variable.min.css";
+
+// Custom vars
+html {
+  --ant-primary-color: #F05A61;
+  --ant-primary-color-hover: #C0484E;
+  --ant-primary-color-active: #C0484E;
+  --ant-primary-color-outline: rgba(239, 90, 97, 0.2);
+  --ant-primary-1: #e6f7ff;
+  --ant-primary-2: #FEEFEF;
+  --ant-primary-3: #F9BDC0;
+  --ant-primary-4: #F05A61;
+  --ant-primary-5: #C0484E;
+  --ant-primary-6: #90363A;
+  --ant-primary-7: #90363A;
+}
+
+.antd-checkbox--wrapper {
+  position: relative;
+
+  .ant-checkbox:after,
+  .ant-checkbox .ant-checkbox-inner {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+  }
+
+  .antd-checkbox--box {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+}
