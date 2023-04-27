@@ -2,9 +2,9 @@ import React from 'react';
 import Cookies from 'universal-cookie';
 import Head from 'next/head';
 import { User } from 'types/user';
-import UserService from 'services/userService';
-import { Button, Input } from 'antd';
 import { appName } from 'types/app';
+import UserService from 'services/userService';
+import Homepage from 'components/Homepage';
 
 interface Props {
   currentUser: User;
@@ -52,9 +52,9 @@ class IndexPage extends React.Component<Props> {
           <meta name="twitter:image:alt" content={appName} />
         </Head>
 
-        <div>
-          <div>Homepage content</div>
-        </div>
+        <Homepage
+          currentUser={currentUser}
+        />
       </>
     );
   }

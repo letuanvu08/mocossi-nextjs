@@ -2,9 +2,9 @@ import Head from 'next/head';
 import React from 'react';
 import Cookies from 'universal-cookie';
 import { User } from 'types/user';
+import { appName } from 'types/app';
 import UserService from 'services/userService';
 import AppError from 'foundation/AppError';
-import { appName } from 'types/app';
 
 interface Props {
   statusCode: number[];
