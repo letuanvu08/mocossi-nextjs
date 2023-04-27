@@ -1,8 +1,8 @@
 import React, { Component, ReactNode } from 'react';
 import { connect } from 'react-redux';
-import { Layout } from 'antd';
+import { ConfigProvider, Layout } from 'antd';
 import { User } from 'types/user';
-import { Breakpoints } from 'constants/theme';
+import { Breakpoints, Colors } from 'constants/theme';
 import { ThemeSettings, ThemeView } from 'types/theme';
 import { themeActions } from 'core/actions/theme';
 import AppHeader from 'foundation/AppHeader';
@@ -225,14 +225,22 @@ class AppLayout extends Component<Props, State> {
     const { style, ...nestedContainerProps } = containerProps || {};
 
     return (
-      <Layout
-        style={{ minHeight: '100vh', ...style }}
-        {...nestedContainerProps}
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: Colors.Primary,
+          },
+        }}
       >
-        {this.renderPageHeader()}
-        {this.renderPageContent()}
-        {this.renderPageFooter()}
-      </Layout>
+        <Layout
+          style={{ minHeight: '100vh', ...style }}
+          {...nestedContainerProps}
+        >
+          {this.renderPageHeader()}
+          {this.renderPageContent()}
+          {this.renderPageFooter()}
+        </Layout>
+      </ConfigProvider>
     );
   }
 }

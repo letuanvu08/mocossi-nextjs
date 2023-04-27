@@ -68,7 +68,6 @@ class AppHeader extends React.Component<Props, States> {
       fontSize: 20,
       fontWeight: 500,
       padding: 12,
-      borderRadius: 6,
 
       ...isSmallView ? {
         marginTop: 4,

@@ -1,5 +1,3 @@
-// @import "antd/dist/antd.variable.min.css";
-
 // Custom vars
 html {
   --ant-primary-color: #FFA629;
@@ -34,5 +32,15 @@ html {
     -moz-transform: translate(0, -50%);
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
+  }
+}
+
+.ant-input-number-handler-wrap {
+  opacity: 1 !important;
+}
+
+.ant-carousel--custom-dots {
+  .slick-dots li.slick-active > button {
+    background-color: var(--ant-primary-color),
   }
 }
