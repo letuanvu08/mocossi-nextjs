@@ -17,7 +17,7 @@ class Homepage extends React.Component<Props> {
       image: 'https://placehold.co/600x400',
       caption: 'Purchase Mocossi merchandise or create your own with any NFTs',
       description: '',
-      btnText: 'Read more',
+      btnText: 'Explore',
       href: '#',
     }, {
       image: 'https://placehold.co/600x400',

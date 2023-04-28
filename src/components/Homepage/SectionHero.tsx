@@ -29,18 +29,20 @@ class SectionHero extends React.Component<Props> {
     const { image, caption, description, href, btnText } = banner;
     const btnCss = css({
       color: Colors.Black,
-      paddingLeft: 24,
-      paddingRight: 24,
-      height: 48,
+      fontSize: '18px !important',
+      paddingLeft: '32px !important',
+      paddingRight: '32px !important',
+      height: '48px !important',
 
       ':hover': {
         color: Colors.Black,
       },
 
       ...isTabletView || isLargeView ? {
-        fontSize: 18,
-        paddingLeft: 32,
-        paddingRight: 32,
+        height: '64px !important',
+        fontSize: '24px !important',
+        paddingLeft: '48px !important',
+        paddingRight: '48px !important',
       } : {},
     });
 
@@ -73,13 +75,15 @@ class SectionHero extends React.Component<Props> {
                   {caption && (
                     <h2 style={{
                       fontSize: 24,
-                      fontWeight: 600,
-                      letterSpacing: 0.8,
+                      fontWeight: 700,
+                      letterSpacing: 0.2,
                       lineHeight: '32px',
                       margin: 0,
 
-                      ...isTabletView ? { fontSize: 32, lineHeight: '36px', letterSpacing: 1.2 } : {},
-                      ...isLargeView ? { fontSize: 36, lineHeight: '40px', letterSpacing: 1.2 } : {},
+                      ...isTabletView || isLargeView ? {
+                        fontSize: 36,
+                        lineHeight: '48px',
+                      } : {},
                     }}>{caption}</h2>
                   )}
 
@@ -90,14 +94,15 @@ class SectionHero extends React.Component<Props> {
                       marginTop: 16,
                       lineHeight: '24px',
 
-                      ...isTabletView || isLargeView ? {
-                        fontSize: 18,
-                      } : {},
+                      ...isTabletView || isLargeView ? { fontSize: 18 } : {},
                     }}>{description}</div>
                   )}
 
                   {href && (
-                    <div style={{ marginTop: 32 }}>
+                    <div style={{
+                      marginTop: 32,
+                      ...isTabletView || isLargeView ? { marginTop: 64 } : {},
+                    }}>
                       <a href={href} title={btnText || 'Read more'}>
                         <Button
                           size="large"

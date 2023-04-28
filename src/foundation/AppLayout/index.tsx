@@ -227,6 +227,7 @@ class AppLayout extends Component<Props, State> {
     return (
       <ConfigProvider
         theme={{
+          hashed: false,
           token: {
             colorPrimary: Colors.Primary,
           },

@@ -69,6 +69,10 @@ class AppHeader extends React.Component<Props, States> {
       fontWeight: 500,
       padding: 12,
 
+      ':hover': {
+        color: Colors.Primary,
+      },
+
       ...isSmallView ? {
         marginTop: 4,
       } : {
@@ -76,6 +80,10 @@ class AppHeader extends React.Component<Props, States> {
         fontSize: 16,
         marginLeft: 4,
         padding: '6px 16px',
+
+        ':hover': {
+          color: Colors.Primary,
+        },
       },
     });
 
@@ -104,13 +112,11 @@ class AppHeader extends React.Component<Props, States> {
   private renderMobileView() {
     const { isMenusVisible } = this.state;
     const btnConnectCss = css({
-      backgroundColor: Colors.Orange03,
-      borderColor: Colors.Orange03,
+      color: Colors.Black,
       fontWeight: 500,
 
       ':hover': {
-        backgroundColor: Colors.Orange04,
-        borderColor: Colors.Orange04,
+        color: Colors.Black,
       },
     });
 
@@ -123,11 +129,14 @@ class AppHeader extends React.Component<Props, States> {
         justifyContent: 'flex-end',
       }}>
         <Button
+          size="large"
+          type="primary"
           {...btnConnectCss}
         >Connect wallet</Button>
 
         <Button
-          icon={<i className="ri-menu-line" style={{ fontSize: 18 }} />}
+          size="large"
+          icon={<i className="ri-menu-line" style={{ fontSize: 20 }} />}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -143,6 +152,7 @@ class AppHeader extends React.Component<Props, States> {
           destroyOnClose={true}
           open={isMenusVisible}
           closeIcon={<ModalCloseIcon />}
+          maskStyle={{ backgroundColor: 'rgba(33, 33, 33, 0.9)' }}
           headerStyle={{ height: 0, padding: 0 }}
           contentWrapperStyle={{ maxWidth: '100%' }}
           onClose={() => this.setState({ isMenusVisible: false })}
@@ -157,13 +167,14 @@ class AppHeader extends React.Component<Props, States> {
 
   private renderDesktopView() {
     const btnConnectCss = css({
-      backgroundColor: Colors.Orange03,
-      borderColor: Colors.Orange03,
+      color: Colors.Black,
       fontWeight: 500,
+      paddingLeft: '24px !important',
+      paddingRight: '24px !important',
+      height: '48px !important',
 
       ':hover': {
-        backgroundColor: Colors.Orange04,
-        borderColor: Colors.Orange04,
+        color: Colors.Black,
       },
     });
 
@@ -178,6 +189,7 @@ class AppHeader extends React.Component<Props, States> {
         <div style={{ marginRight: 24 }}>{this.renderMainMenus()}</div>
         <Button
           size="large"
+          type="primary"
           {...btnConnectCss}
         >Connect wallet</Button>
       </div>

@@ -40,6 +40,9 @@ html {
 }
 
 .ant-carousel--custom-dots {
+  .slick-dots li > button {
+    background-color: #212121,
+  }
   .slick-dots li.slick-active > button {
     background-color: var(--ant-primary-color),
   }
