@@ -12,8 +12,8 @@ export const Colors = {
   TextColor: '#141414',
   Black: '#000000',
   White: '#ffffff',
-  Primary: '#FFA629',
-  Secondary: '#F65F70',
+  Primary: '#1890ff',
+  Secondary: '#FFA629',
 
   Black01: '#333333',
   Black02: '#222222',

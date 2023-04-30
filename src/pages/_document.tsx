@@ -10,7 +10,7 @@ export default function Document() {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700,800,900" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
       </Head>
 
       <body>

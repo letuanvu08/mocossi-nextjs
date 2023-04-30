@@ -28,21 +28,17 @@ class SectionHero extends React.Component<Props> {
     const isLargeView = isDesktop || isDesktopMedium;
     const { image, caption, description, href, btnText } = banner;
     const btnCss = css({
-      color: Colors.Black,
+      fontWeight: 600,
       fontSize: '18px !important',
-      paddingLeft: '32px !important',
-      paddingRight: '32px !important',
+      paddingLeft: '24px !important',
+      paddingRight: '24px !important',
       height: '48px !important',
 
-      ':hover': {
-        color: Colors.Black,
-      },
-
       ...isTabletView || isLargeView ? {
-        height: '64px !important',
-        fontSize: '24px !important',
-        paddingLeft: '48px !important',
-        paddingRight: '48px !important',
+        fontSize: '18px !important',
+        paddingLeft: '32px !important',
+        paddingRight: '32px !important',
+        height: '60px !important',
       } : {},
     });
 

@@ -6,6 +6,7 @@ import { Colors } from 'constants/theme';
 import { ThemeSettings } from 'types/theme';
 import { User } from 'types/user';
 import ModalCloseIcon from 'foundation/ModalCloseIcon';
+import Logo from 'foundation/Logo';
 
 interface Props {
   isScrolling?: boolean;
@@ -29,16 +30,30 @@ class AppHeader extends React.Component<Props, States> {
   }
 
   private renderLogo() {
+    const {
+      themeSettings: { isMobile, isMobileMedium },
+    } = this.props;
+    const isMobileView = isMobile || isMobileMedium;
+
     return (
       <a
         href="/"
         title="Go to homepage"
         style={{
-          color: Colors.White,
+          color: Colors.Black,
           fontSize: 18,
           fontWeight: 700,
+          position: 'relative',
+          top: 4,
         }}
-      >nftspring.io</a>
+      >
+        <Logo style={{
+          height: 20,
+          width: 'auto',
+
+          ...isMobileView ? {} : { height: 28 },
+        }} />
+      </a>
     );
   }
 
@@ -66,7 +81,6 @@ class AppHeader extends React.Component<Props, States> {
     const menuCss = css({
       color: Colors.TextColor,
       fontSize: 20,
-      fontWeight: 500,
       padding: 12,
 
       ':hover': {
@@ -76,14 +90,9 @@ class AppHeader extends React.Component<Props, States> {
       ...isSmallView ? {
         marginTop: 4,
       } : {
-        color: Colors.White,
         fontSize: 16,
         marginLeft: 4,
         padding: '6px 16px',
-
-        ':hover': {
-          color: Colors.Primary,
-        },
       },
     });
 
@@ -111,14 +120,6 @@ class AppHeader extends React.Component<Props, States> {
 
   private renderMobileView() {
     const { isMenusVisible } = this.state;
-    const btnConnectCss = css({
-      color: Colors.Black,
-      fontWeight: 500,
-
-      ':hover': {
-        color: Colors.Black,
-      },
-    });
 
     return (
       <div style={{
@@ -131,7 +132,6 @@ class AppHeader extends React.Component<Props, States> {
         <Button
           size="large"
           type="primary"
-          {...btnConnectCss}
         >Connect wallet</Button>
 
         <Button
@@ -166,18 +166,6 @@ class AppHeader extends React.Component<Props, States> {
   }
 
   private renderDesktopView() {
-    const btnConnectCss = css({
-      color: Colors.Black,
-      fontWeight: 500,
-      paddingLeft: '24px !important',
-      paddingRight: '24px !important',
-      height: '48px !important',
-
-      ':hover': {
-        color: Colors.Black,
-      },
-    });
-
     return (
       <div style={{
         flexGrow: 1,
@@ -190,7 +178,6 @@ class AppHeader extends React.Component<Props, States> {
         <Button
           size="large"
           type="primary"
-          {...btnConnectCss}
         >Connect wallet</Button>
       </div>
     );
@@ -199,23 +186,25 @@ class AppHeader extends React.Component<Props, States> {
   render() {
     const {
       headerProps,
-      themeSettings: { isMobile, isMobileMedium, isTablet, isDesktop, isDesktopMedium },
+      themeSettings: { isMobile, isMobileMedium, isTablet },
     } = this.props;
     const { style, ...nestedHeaderProps } = headerProps || {} ;
     const isSmallView = isMobile || isMobileMedium || isTablet;
-    const isDesktopView = isDesktop || isDesktopMedium;
 
     return (
       <Layout.Header
         style={{
-          backgroundColor: Colors.Black03,
+          backgroundColor: Colors.White,
           transition: '0.2s',
           height: 'auto',
           position: 'relative',
           lineHeight: '24px',
           zIndex: 300,
-          padding: 16,
-          ...isDesktopView ? { padding: 24 } : {},
+          paddingLeft: 12,
+          paddingRight: 12,
+          paddingBottom: 12,
+          paddingTop: 12,
+          ...isSmallView ? {} : { paddingLeft: 16, paddingRight: 16 },
           ...style || {},
         }}
         {...nestedHeaderProps}
